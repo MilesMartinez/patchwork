@@ -1,0 +1,24 @@
+This directory contains placeholder images for the website.
+Please replace with actual project photos:
+
+Gallery Page Images:
+- drywall-installation.jpg
+- texture-work.jpg
+- repairs.jpg
+- finishing.jpg
+
+Homepage Images:
+- hero.jpg (Hero section image, showing professional drywall work)
+- residential.jpg (Residential services image)
+- commercial.jpg (Commercial projects image)
+
+Recommended image specifications:
+- Hero image: 2000x1800px, aspect ratio 3:2
+- Gallery/Service images: 1000x600px, aspect ratio 16:9
+- Format: JPG
+- Quality: High (80%+)
+- Size: < 500KB per image
+- Optimization: Use WebP format if possible for better performance
+
+Note: All images should be high-quality, well-lit photographs of actual drywall work.
+Ensure you have proper rights/permissions to use all images. 
