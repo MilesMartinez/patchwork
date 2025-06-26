@@ -1,8 +1,7 @@
 import { Navigation } from '@/components/Navigation'
-import Image from 'next/image'
 import Link from 'next/link'
 import { CheckCircleIcon } from '@heroicons/react/24/solid'
-import { getImagePath } from '@/utils/imagePath'
+import { GitHubImage } from '@/components/GitHubImage'
 
 const features = [
   {
@@ -72,8 +71,8 @@ export default async function Home() {
         </div>
         <div className="bg-gray-50 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
           <div className="relative h-[600px] lg:h-full">
-            <Image
-              src={getImagePath('images/hero.jpg')}
+            <GitHubImage
+              src="/images/hero.jpg"
               alt="Professional drywall work"
               fill
               className="aspect-[3/2] h-full w-full object-cover object-top lg:aspect-auto"
@@ -124,7 +123,7 @@ export default async function Home() {
           {services.map((service) => (
             <article key={service.name} className="flex flex-col items-start">
               <div className="relative w-full">
-                <Image
+                <GitHubImage
                   src={service.image}
                   alt={service.name}
                   width={1000}

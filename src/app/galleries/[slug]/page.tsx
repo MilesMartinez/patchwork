@@ -1,8 +1,8 @@
 import { Navigation } from '@/components/Navigation'
 import { galleries } from '../data'
-import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import { GitHubImage } from '@/components/GitHubImage'
 
 export function generateStaticParams() {
   return [
@@ -48,7 +48,7 @@ export default function GalleryPage({ params }: { params: { slug: string } }) {
                     {/* Before Image */}
                     <div className="relative">
                       <div className="overflow-hidden rounded-lg">
-                        <Image
+                        <GitHubImage
                           src={image.beforeImage}
                           alt={`Before - ${image.title}`}
                           width={800}
@@ -64,7 +64,7 @@ export default function GalleryPage({ params }: { params: { slug: string } }) {
                     {/* After Image */}
                     <div className="relative">
                       <div className="overflow-hidden rounded-lg">
-                        <Image
+                        <GitHubImage
                           src={image.afterImage}
                           alt={`After - ${image.title}`}
                           width={800}

@@ -1,7 +1,7 @@
 import { Navigation } from '@/components/Navigation'
-import Image from 'next/image'
 import Link from 'next/link'
 import { galleries } from './data'
+import { GitHubImage } from '@/components/GitHubImage'
 
 export default function GalleriesPage() {
   return (
@@ -28,7 +28,7 @@ export default function GalleriesPage() {
               >
                 <article className="w-full">
                   <div className="relative w-full overflow-hidden rounded-2xl">
-                    <Image
+                    <GitHubImage
                       src={gallery.imageUrl}
                       alt={gallery.title}
                       width={1000}
