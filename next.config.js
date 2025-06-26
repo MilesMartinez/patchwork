@@ -4,6 +4,7 @@ const nextConfig = {
   swcMinify: true,
   output: 'export',
   basePath: process.env.GITHUB_ACTIONS ? '/patchwork' : '',
+  assetPrefix: process.env.GITHUB_ACTIONS ? '/patchwork/' : '',
   images: {
     unoptimized: true,
   },

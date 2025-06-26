@@ -2,6 +2,7 @@ import { Navigation } from '@/components/Navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 import { CheckCircleIcon } from '@heroicons/react/24/solid'
+import { getImagePath } from '@/utils/imagePath'
 
 const features = [
   {
@@ -72,7 +73,7 @@ export default async function Home() {
         <div className="bg-gray-50 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
           <div className="relative h-[600px] lg:h-full">
             <Image
-              src="/images/hero.jpg"
+              src={getImagePath('images/hero.jpg')}
               alt="Professional drywall work"
               fill
               className="aspect-[3/2] h-full w-full object-cover object-top lg:aspect-auto"
