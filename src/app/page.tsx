@@ -70,14 +70,16 @@ export default async function Home() {
           </div>
         </div>
         <div className="bg-gray-50 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-          <Image
-            src="/images/hero.jpg"
-            alt="Professional drywall work"
-            width={2000}
-            height={1800}
-            className="aspect-[3/2] h-full w-full object-cover lg:aspect-auto"
-            priority
-          />
+          <div className="relative h-[600px] lg:h-full">
+            <Image
+              src="/images/hero.jpg"
+              alt="Professional drywall work"
+              fill
+              className="aspect-[3/2] h-full w-full object-cover lg:aspect-auto"
+              style={{ objectPosition: '50% 20%' }}
+              priority
+            />
+          </div>
         </div>
       </div>
 

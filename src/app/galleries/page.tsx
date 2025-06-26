@@ -1,32 +1,7 @@
 import { Navigation } from '@/components/Navigation'
 import Image from 'next/image'
-
-const galleryItems = [
-  {
-    id: 1,
-    title: 'Drywall Installation',
-    description: 'Professional drywall installation for residential and commercial spaces',
-    imageUrl: '/images/drywall-installation.jpg',
-  },
-  {
-    id: 2,
-    title: 'Texture Work',
-    description: 'Custom texture finishes to match your style',
-    imageUrl: '/images/texture-work.jpg',
-  },
-  {
-    id: 3,
-    title: 'Repairs',
-    description: 'Expert drywall repair and patch work',
-    imageUrl: '/images/repairs.jpg',
-  },
-  {
-    id: 4,
-    title: 'Finishing',
-    description: 'Smooth and professional drywall finishing',
-    imageUrl: '/images/finishing.jpg',
-  },
-]
+import Link from 'next/link'
+import { galleries } from './data'
 
 export default function GalleriesPage() {
   return (
@@ -45,36 +20,42 @@ export default function GalleriesPage() {
           </div>
           
           <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-            {galleryItems.map((item) => (
-              <article key={item.id} className="flex flex-col items-start">
-                <div className="relative w-full">
-                  <Image
-                    src={item.imageUrl}
-                    alt={item.title}
-                    width={1000}
-                    height={600}
-                    className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
-                  />
-                </div>
-                <div className="max-w-xl">
-                  <div className="mt-8 flex items-center gap-x-4 text-xs">
-                    <h3 className="font-display text-2xl font-bold leading-8 tracking-tight text-gray-900">
-                      {item.title}
-                    </h3>
+            {galleries.map((gallery) => (
+              <Link 
+                key={gallery.id} 
+                href={`/galleries/${gallery.slug}`}
+                className="flex flex-col items-start group"
+              >
+                <article className="w-full">
+                  <div className="relative w-full overflow-hidden rounded-2xl">
+                    <Image
+                      src={gallery.imageUrl}
+                      alt={gallery.title}
+                      width={1000}
+                      height={600}
+                      className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2] group-hover:scale-105 transition duration-300"
+                    />
                   </div>
-                  <p className="mt-4 text-sm leading-6 text-gray-600">{item.description}</p>
-                </div>
-              </article>
+                  <div className="max-w-xl">
+                    <div className="mt-8 flex items-center gap-x-4 text-xs">
+                      <h3 className="font-display text-2xl font-bold leading-8 tracking-tight text-gray-900 group-hover:text-gray-600">
+                        {gallery.title}
+                      </h3>
+                    </div>
+                    <p className="mt-4 text-sm leading-6 text-gray-600">{gallery.description}</p>
+                  </div>
+                </article>
+              </Link>
             ))}
           </div>
           
           <div className="mt-16 text-center">
-            <a
+            <Link
               href="/estimate"
               className="rounded-md bg-gray-900 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
             >
               Get a Free Estimate
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,0 +1,166 @@
+import { Gallery } from '@/types'
+
+export const galleries: Gallery[] = [
+  {
+    id: 1,
+    title: 'Hole Repairs',
+    description: 'Expert drywall hole repair and patch work, making your walls look like new again',
+    imageUrl: '/images/hole_repairs/hole1_after.jpg',
+    slug: 'hole-repairs',
+    images: [
+      {
+        id: 1,
+        title: 'Large Wall Repair',
+        beforeImage: '/images/hole_repairs/hole1_before.jpg',
+        afterImage: '/images/hole_repairs/hole1_after.jpg',
+        description: 'Professional repair of a large wall damage',
+      },
+      {
+        id: 2,
+        title: 'Water Damage Repair',
+        beforeImage: '/images/hole_repairs/hole3_before.jpg',
+        afterImage: '/images/hole_repairs/hole3_after.jpg',
+        description: 'Seamless repair of water damage',
+      },
+      {
+        id: 3,
+        title: 'Large Hole Repair',
+        beforeImage: '/images/hole_repairs/hole4_before.jpg',
+        afterImage: '/images/hole_repairs/hole4_after.jpg',
+        description: 'Seamless repair of large wall damage',
+      },
+      {
+        id: 4,
+        title: 'Wall Section Repair',
+        beforeImage: '/images/hole_repairs/hole5_before.jpg',
+        afterImage: '/images/hole_repairs/hole5_after.jpg',
+        description: 'Professional repair of complex wall damage',
+      },
+      {
+        id: 5,
+        title: 'Repair around outlets',
+        beforeImage: '/images/hole_repairs/hole6_before.jpg',
+        afterImage: '/images/hole_repairs/hole6_after.jpg',
+        description: 'Seamless repair of wall damage around outlets',
+      },
+      {
+        id: 6,
+        title: 'Retouch',
+        beforeImage: '/images/hole_repairs/hole7_before.jpg',
+        afterImage: '/images/hole_repairs/hole_7after.jpg',
+        description: 'Retouching of wall damage',
+      },
+      {
+        id: 7,
+        title: 'Small Hole Repair',
+        beforeImage: '/images/hole_repairs/hole8_before.jpg',
+        afterImage: '/images/hole_repairs/hole8_after.jpg',
+        description: 'Seamless repair of small wall damage',
+      },
+      {
+        id: 8,
+        title: 'Corner Damage Repair',
+        beforeImage: '/images/hole_repairs/hole2_before.jpg',
+        afterImage: '/images/hole_repairs/hole2_after.jpg',
+        description: 'Expert repair of corner wall damage',
+      },
+      {
+        id: 9,
+        title: 'Detailed Wall Repair',
+        beforeImage: '/images/hole_repairs/hole9_before.jfif',
+        afterImage: '/images/hole_repairs/hole9_after.jfif',
+        description: 'Detailed repair work with perfect finishing',
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: 'Texture Work',
+    description: 'Custom texture finishes to match your existing walls or create a new look',
+    imageUrl: '/images/hole4_after.jpg',
+    slug: 'texture-work',
+    images: [
+      {
+        id: 1,
+        title: 'Knockdown Texture',
+        beforeImage: '/images/hole4_before.jpg',
+        afterImage: '/images/hole4_after.jpg',
+        description: 'Professional knockdown texture application',
+      },
+      {
+        id: 2,
+        title: 'Orange Peel Texture',
+        beforeImage: '/images/hole5_before.jpg',
+        afterImage: '/images/hole5_after.jpg',
+        description: 'Orange peel texture matching',
+      },
+      {
+        id: 3,
+        title: 'Smooth Finish Texture',
+        beforeImage: '/images/hole6_before.jpg',
+        afterImage: '/images/hole6_after.jpg',
+        description: 'Level 5 smooth finish application',
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: 'Finishing Work',
+    description: 'Professional drywall finishing and detailing for a flawless look',
+    imageUrl: '/images/hole7_before.jpg',
+    slug: 'finishing',
+    images: [
+      {
+        id: 1,
+        title: 'Ceiling Finishing',
+        beforeImage: '/images/hole7_before.jpg',
+        afterImage: '/images/hole_7after.jpg',
+        description: 'Professional ceiling repair and finishing',
+      },
+      {
+        id: 2,
+        title: 'Wall Joint Finishing',
+        beforeImage: '/images/hole8_before.jpg',
+        afterImage: '/images/hole8_after.jpg',
+        description: 'Seamless wall joint finishing',
+      },
+      {
+        id: 3,
+        title: 'Detail Finishing',
+        beforeImage: '/images/hole9_before.jfif',
+        afterImage: '/images/hole9_after.jfif',
+        description: 'Fine detail work and finishing touches',
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: 'Carpentry',
+    description: 'Custom carpentry solutions including framing, trim work, and wood repairs',
+    imageUrl: '/images/hole3_after.jpg', // Using this temporarily - you'll want to replace with a carpentry-specific image
+    slug: 'carpentry',
+    images: [
+      {
+        id: 1,
+        title: 'Wall Framing',
+        beforeImage: '/images/hole1_before.jpg', // These should be replaced with actual carpentry images
+        afterImage: '/images/hole1_after.jpg',
+        description: 'Custom wall framing and structural work',
+      },
+      {
+        id: 2,
+        title: 'Trim Installation',
+        beforeImage: '/images/hole2_before.jpg', // These should be replaced with actual carpentry images
+        afterImage: '/images/hole2_after.jpg',
+        description: 'Professional trim and molding installation',
+      },
+      {
+        id: 3,
+        title: 'Wood Repair',
+        beforeImage: '/images/hole3_before.jpg', // These should be replaced with actual carpentry images
+        afterImage: '/images/hole3_after.jpg',
+        description: 'Expert wood repair and restoration',
+      },
+    ],
+  },
+] 
