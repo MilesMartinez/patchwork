@@ -7,8 +7,8 @@ interface GitHubImageProps extends Omit<ImageProps, 'src'> {
 }
 
 export function GitHubImage({ src, ...props }: GitHubImageProps) {
-  // Ensure the path starts with a slash but doesn't have multiple slashes
-  const cleanPath = src.replace(/^\/+/, '/')
+  // Always ensure path starts with a forward slash
+  const cleanPath = src.startsWith('/') ? src : `/${src}`
 
   return <Image {...props} src={cleanPath} />
 } 
