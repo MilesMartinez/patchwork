@@ -7,13 +7,8 @@ interface GitHubImageProps extends Omit<ImageProps, 'src'> {
 }
 
 export function GitHubImage({ src, ...props }: GitHubImageProps) {
-  // Remove any leading slashes
-  const cleanPath = src.startsWith('/') ? src.slice(1) : src
+  // Remove any leading slashes and ensure a leading slash
+  const cleanPath = src.startsWith('/') ? src : `/${src}`
 
-  // In production (GitHub Pages), add the patchwork prefix
-  const imagePath = process.env.NODE_ENV === 'production' 
-    ? `/patchwork/${cleanPath}`
-    : `/${cleanPath}`
-
-  return <Image {...props} src={imagePath} />
+  return <Image {...props} src={cleanPath} />
 } 
