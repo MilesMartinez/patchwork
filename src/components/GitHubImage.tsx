@@ -1,26 +1,18 @@
 'use client'
 
 import Image, { ImageProps } from 'next/image'
-import { useEffect, useState } from 'react'
 
 interface GitHubImageProps extends Omit<ImageProps, 'src'> {
   src: string
 }
 
 export function GitHubImage({ src, ...props }: GitHubImageProps) {
-  const [imagePath, setImagePath] = useState(src)
+  // Remove leading slash if present
+  const cleanPath = src.startsWith('/') ? src.slice(1) : src
+  
+  // Add patchwork prefix only if not in development
+  const basePath = process.env.NODE_ENV === 'development' ? '' : 'patchwork'
+  const imagePath = basePath ? `${basePath}/${cleanPath}` : cleanPath
 
-  useEffect(() => {
-    // Check if we're on GitHub Pages
-    const isGitHubPages = window.location.hostname === 'milesmartinez.github.io' || 
-                         window.location.pathname.startsWith('/patchwork')
-    
-    if (isGitHubPages) {
-      // Remove leading slash if present
-      const cleanPath = src.startsWith('/') ? src.slice(1) : src
-      setImagePath(`/patchwork/${cleanPath}`)
-    }
-  }, [src])
-
-  return <Image {...props} src={imagePath} />
+  return <Image {...props} src={`/${imagePath}`} />
 } 
