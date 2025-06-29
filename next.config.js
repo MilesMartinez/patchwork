@@ -1,7 +1,4 @@
 /** @type {import('next').NextConfig} */
-const isProduction = process.env.NODE_ENV === 'production'
-const repoName = 'patchwork'
-
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
@@ -9,8 +6,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: isProduction ? `/${repoName}` : '',
-  assetPrefix: isProduction ? `/${repoName}/` : '/',
+  basePath: process.env.NODE_ENV === 'production' ? '/patchwork' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/patchwork' : '',
 }
 
 module.exports = nextConfig 
