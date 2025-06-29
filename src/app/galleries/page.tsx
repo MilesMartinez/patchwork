@@ -4,6 +4,7 @@ import { Navigation } from '@/components/Navigation'
 import Link from 'next/link'
 import { galleries } from './data'
 import { GitHubImage } from '@/components/GitHubImage'
+import { PhotoIcon } from '@heroicons/react/24/outline'
 
 export default function GalleriesPage() {
   return (
@@ -25,23 +26,38 @@ export default function GalleriesPage() {
             {galleries.map((gallery) => (
               <Link 
                 key={gallery.id} 
-                href={`/galleries/${gallery.slug}`}
-                className="flex flex-col items-start group"
+                href={gallery.images.length > 0 ? `/galleries/${gallery.slug}` : '#'}
+                className={`flex flex-col items-start group ${gallery.images.length === 0 ? 'cursor-not-allowed opacity-50' : ''}`}
+                onClick={(e) => {
+                  if (gallery.images.length === 0) {
+                    e.preventDefault()
+                  }
+                }}
               >
                 <article className="w-full">
-                  <div className="relative w-full overflow-hidden rounded-2xl">
-                    <GitHubImage
-                      src={gallery.imageUrl}
-                      alt={gallery.title}
-                      width={1000}
-                      height={600}
-                      className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2] group-hover:scale-105 transition duration-300"
-                    />
+                  <div className="relative w-full overflow-hidden rounded-2xl bg-gray-100">
+                    {gallery.imageUrl ? (
+                      <GitHubImage
+                        src={gallery.imageUrl}
+                        alt={gallery.title}
+                        width={1000}
+                        height={600}
+                        className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2] group-hover:scale-105 transition duration-300"
+                      />
+                    ) : (
+                      <div className="aspect-[16/9] w-full sm:aspect-[2/1] lg:aspect-[3/2] flex items-center justify-center">
+                        <PhotoIcon className="h-16 w-16 text-gray-400" />
+                        <span className="sr-only">Coming Soon</span>
+                      </div>
+                    )}
                   </div>
                   <div className="max-w-xl">
                     <div className="mt-8 flex items-center gap-x-4 text-xs">
                       <h3 className="font-display text-2xl font-bold leading-8 tracking-tight text-gray-900 group-hover:text-gray-600">
                         {gallery.title}
+                        {gallery.images.length === 0 && (
+                          <span className="ml-2 text-sm font-normal text-gray-500">(Coming Soon)</span>
+                        )}
                       </h3>
                     </div>
                     <p className="mt-4 text-sm leading-6 text-gray-600">{gallery.description}</p>
