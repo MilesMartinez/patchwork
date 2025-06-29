@@ -1,3 +1,5 @@
+'use client'
+
 import { Navigation } from '@/components/Navigation'
 import { StarIcon } from '@heroicons/react/20/solid'
 

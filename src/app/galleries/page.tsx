@@ -1,3 +1,5 @@
+'use client'
+
 import { Navigation } from '@/components/Navigation'
 import Link from 'next/link'
 import { galleries } from './data'
