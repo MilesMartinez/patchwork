@@ -3,7 +3,7 @@
 import { Navigation } from '@/components/Navigation'
 import Link from 'next/link'
 import { galleries } from './data'
-import { GitHubImage } from '@/components/GitHubImage'
+import Image from 'next/image'
 import { PhotoIcon } from '@heroicons/react/24/outline'
 
 export default function GalleriesPage() {
@@ -37,7 +37,7 @@ export default function GalleriesPage() {
                 <article className="w-full">
                   <div className="relative w-full overflow-hidden rounded-2xl bg-gray-100">
                     {gallery.imageUrl ? (
-                      <GitHubImage
+                      <Image
                         src={gallery.imageUrl}
                         alt={gallery.title}
                         width={1000}

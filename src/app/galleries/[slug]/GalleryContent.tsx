@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Navigation } from '@/components/Navigation'
 import Link from 'next/link'
-import { GitHubImage } from '@/components/GitHubImage'
+import Image from 'next/image'
 import { ImageModal } from '@/components/ImageModal'
 import { Gallery } from '@/types'
 
@@ -48,7 +48,7 @@ export function GalleryContent({ gallery }: GalleryContentProps) {
                         setSelectedImageAlt(`Before - ${image.title}`)
                       }}
                     >
-                      <GitHubImage
+                      <Image
                         src={image.beforeImage}
                         alt={`Before - ${image.title}`}
                         width={800}
@@ -70,7 +70,7 @@ export function GalleryContent({ gallery }: GalleryContentProps) {
                         setSelectedImageAlt(`After - ${image.title}`)
                       }}
                     >
-                      <GitHubImage
+                      <Image
                         src={image.afterImage}
                         alt={`After - ${image.title}`}
                         width={800}

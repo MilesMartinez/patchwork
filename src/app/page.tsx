@@ -3,7 +3,7 @@
 import { Navigation } from '@/components/Navigation'
 import Link from 'next/link'
 import { CheckCircleIcon } from '@heroicons/react/24/solid'
-import { GitHubImage } from '@/components/GitHubImage'
+import Image from 'next/image'
 
 const features = [
   {
@@ -73,7 +73,7 @@ export default async function Home() {
         </div>
         <div className="bg-gray-50 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
           <div className="relative h-[600px] lg:h-full">
-            <GitHubImage
+            <Image
               src={`${process.env.basePath}/images/hero.jpg`}
               alt="Professional drywall work"
               fill
@@ -125,7 +125,7 @@ export default async function Home() {
           {services.map((service) => (
             <article key={service.name} className="flex flex-col items-start">
               <div className="relative w-full">
-                <GitHubImage
+                <Image
                   src={service.image}
                   alt={service.name}
                   width={1000}

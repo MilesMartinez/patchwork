@@ -2,7 +2,7 @@
 
 import { Dialog } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
-import { GitHubImage } from './GitHubImage'
+import Image from 'next/image'
 
 interface ImageModalProps {
   isOpen: boolean
@@ -35,7 +35,7 @@ export function ImageModal({ isOpen, onClose, imageSrc, imageAlt }: ImageModalPr
 
           {/* Image */}
           <div className="overflow-hidden rounded-lg">
-            <GitHubImage
+            <Image
               src={imageSrc}
               alt={imageAlt}
               width={1920}
