@@ -3,11 +3,10 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   output: 'export',
-  basePath: process.env.GITHUB_ACTIONS ? '/patchwork' : '',
-  assetPrefix: process.env.GITHUB_ACTIONS ? '/patchwork/' : '',
   images: {
     unoptimized: true,
   },
+  basePath: process.env.NODE_ENV === 'production' ? '/patchwork' : '',
 }
 
 module.exports = nextConfig 
