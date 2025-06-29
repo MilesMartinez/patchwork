@@ -28,12 +28,12 @@ const services = [
   {
     name: 'Residential Services',
     description: 'Complete drywall solutions for your home, from new construction to renovations',
-    image: '/images/residential.jpg',
+    image: `${process.env.basePath}/images/residential.jpg`,
   },
   {
     name: 'Commercial Projects',
     description: 'Large-scale commercial drywall installation and maintenance services',
-    image: '/images/commercial.jpg',
+    image: `${process.env.basePath}/images/commercial.jpg`,
   },
 ]
 
@@ -74,7 +74,7 @@ export default async function Home() {
         <div className="bg-gray-50 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
           <div className="relative h-[600px] lg:h-full">
             <GitHubImage
-              src="/images/hero.jpg"
+              src={`${process.env.basePath}/images/hero.jpg`}
               alt="Professional drywall work"
               fill
               className="aspect-[3/2] h-full w-full object-cover object-top lg:aspect-auto"
