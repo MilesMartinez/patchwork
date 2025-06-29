@@ -7,8 +7,5 @@ interface GitHubImageProps extends Omit<ImageProps, 'src'> {
 }
 
 export function GitHubImage({ src, ...props }: GitHubImageProps) {
-  // Remove any leading slashes and don't add any prefix - Next.js will handle that
-  const cleanPath = src.replace(/^\/+/, '')
-
-  return <Image {...props} src={`/${cleanPath}`} />
+  return <Image {...props} src={src} />
 } 

@@ -5,9 +5,7 @@ const nextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
-  },
-  basePath: process.env.NODE_ENV === 'production' ? '/patchwork' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/patchwork' : '',
+  }
 }
 
 module.exports = nextConfig 
